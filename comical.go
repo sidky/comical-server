@@ -63,7 +63,6 @@ func updateHandler(w http.ResponseWriter, r *http.Request) {
 		log.Printf("Error: %v", parseError)
 		return
 	}
-
 	log.Printf("Update: %v", feedItem)
 
 	_, err := fmt.Fprint(w, "Done updating")

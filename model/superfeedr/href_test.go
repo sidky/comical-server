@@ -18,11 +18,9 @@ var hrefIncomplete = &Href{
 	Rel:   "alternate",
 }
 
-const serialized =
-	`{"title":"Parker Solar Probe","href":"https://xkcd.com/2262/","rel":"alternate","type":"text/html"}`
+const serialized = `{"title":"Parker Solar Probe","href":"https://xkcd.com/2262/","rel":"alternate","type":"text/html"}`
 
-const serializedIncomplete =
-	`{"title":"","href":"https://xkcd.com/2262/","rel":"alternate"}`
+const serializedIncomplete = `{"title":"","href":"https://xkcd.com/2262/","rel":"alternate"}`
 
 func TestHrefSerialization(t *testing.T) {
 	b, err := json.Marshal(href)

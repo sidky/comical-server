@@ -12,7 +12,6 @@ import (
 )
 
 type XkcdFeedHandler struct {
-
 }
 
 func NewXkcdHandler() XkcdFeedHandler {
@@ -27,7 +26,6 @@ func (h XkcdFeedHandler) CanHandle(item *superfeedr.FeedItem) bool {
 	return strings.Index(item.ID, "https://xkcd.com/") == 0
 }
 
-
 func (h XkcdFeedHandler) Convert(item *superfeedr.FeedItem) (*comics.Entry, error) {
 	nodes, err := html.ParseFragment(strings.NewReader(item.Summary), nil)
 	if err != nil {
@@ -39,7 +37,6 @@ func (h XkcdFeedHandler) Convert(item *superfeedr.FeedItem) (*comics.Entry, erro
 	}
 
 	var entry *comics.Entry;
-
 	entry = nil
 
 	for _, node := range nodes {
@@ -54,9 +51,9 @@ func (h XkcdFeedHandler) Convert(item *superfeedr.FeedItem) (*comics.Entry, erro
 				Origin:       h.Name(),
 				PermalinkUrl: item.PermalinkUrl,
 				Title:        item.Title,
-				Published:    time.Unix(item.Published / 1000, (item.Published % 1000) * 1000000),
+				Published:    time.Unix(item.Published/1000, (item.Published%1000)*1000000),
 				Description:  alt,
-				Images:       []string {
+				Images: []string{
 					src,
 				},
 			}

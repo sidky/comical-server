@@ -8,22 +8,21 @@ import (
 
 var feedUpdate = FeedUpdate{
 	UpdateStatus: Status{
-		Code: 304,
-		Http: "Fetched (ring) 306 900",
-		NextFetch: 1580581304,
-		Velocity: 0.5,
-		Title: "xkcd.com",
-		Period: 900,
-		LastFetch: 1580580404,
-		LastParse: 1580565988,
+		Code:              304,
+		Http:              "Fetched (ring) 306 900",
+		NextFetch:         1580581304,
+		Velocity:          0.5,
+		Title:             "xkcd.com",
+		Period:            900,
+		LastFetch:         1580580404,
+		LastParse:         1580565988,
 		LastMaintenanceAt: 1580565988,
-		Feed: "ttps://xkcd.com/rss.xml",
-
+		Feed:              "ttps://xkcd.com/rss.xml",
 	},
-	Title:        "xkcd.com",
-	Updated:      0,
-	ID:           "",
-	Items:        []FeedItem{
+	Title:   "xkcd.com",
+	Updated: 0,
+	ID:      "",
+	Items: []FeedItem{
 		{
 			ID:           "https://xkcd.com/2262/",
 			Published:    1580446800,
@@ -43,25 +42,25 @@ var feedUpdate = FeedUpdate{
 				Superfeedr: nil,
 			},
 			ItemSource: Source{
-				ID: "xkcd-com-2020-1-31-5",
-				Title: "xkcd.com",
-				Updated: 1580446800,
-				Published: 1580446800,
+				ID:           "xkcd-com-2020-1-31-5",
+				Title:        "xkcd.com",
+				Updated:      1580446800,
+				Published:    1580446800,
 				PermalinkUrl: "https://xkcd.com/",
 				StandardLinks: Linkset{
-					Alternate: []Href {
+					Alternate: []Href{
 						{
 							Title: "xkcd.com",
-							Href: "https://xkcd.com/",
-							Rel: "alternate",
-							Type: "text/html",
+							Href:  "https://xkcd.com/",
+							Rel:   "alternate",
+							Type:  "text/html",
 						},
 					},
-					Superfeedr: []Href {
+					Superfeedr: []Href{
 						{
 							Title: "",
-							Href: "https://xkcd.com/rss.xml",
-							Rel: "superfeedr",
+							Href:  "https://xkcd.com/rss.xml",
+							Rel:   "superfeedr",
 						},
 					},
 				},
@@ -133,7 +132,6 @@ const realJson = `{
         }
     ]
 }`
-
 
 func TestFeedUpdateSerialization(t *testing.T) {
 	u := FeedUpdate{}

@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-var linkset = &Linkset {
+var linkset = &Linkset{
 	Alternate: []Href{
 		{
 			Title: "xkcd.com",
@@ -24,7 +24,7 @@ var linkset = &Linkset {
 	Superfeedr: []Href{
 		{
 			Title: "",
-			Href: "https://xkcd.com/rss.xml",
+			Href:  "https://xkcd.com/rss.xml",
 		},
 	},
 }

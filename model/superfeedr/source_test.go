@@ -7,32 +7,31 @@ import (
 )
 
 var source = Source{
-	ID:            "xkcd-com-2020-1-31-5",
-	Title:         "xkcd.com",
-	Updated:       1580446800,
-	Published:     1580446800,
-	PermalinkUrl:  "https://xkcd.com/",
+	ID:           "xkcd-com-2020-1-31-5",
+	Title:        "xkcd.com",
+	Updated:      1580446800,
+	Published:    1580446800,
+	PermalinkUrl: "https://xkcd.com/",
 	StandardLinks: Linkset{
 		Alternate: []Href{
 			{
 				Title: "xkcd.com",
-				Href: "https://xkcd.com",
-				Rel: "alternate",
-				Type: "text/html",
+				Href:  "https://xkcd.com",
+				Rel:   "alternate",
+				Type:  "text/html",
 			},
 		},
-		Superfeedr: []Href {
+		Superfeedr: []Href{
 			{
 				Title: "",
-				Href: "https://xkcd.com/rss",
-				Rel: "superfeedr",
+				Href:  "https://xkcd.com/rss",
+				Rel:   "superfeedr",
 			},
 		},
 	},
 }
 
-const serializedSource =
-	`{"id":"xkcd-com-2020-1-31-5","title":"xkcd.com","updated":1580446800,"published":1580446800,"permalinkUrl":"https://xkcd.com/","standardLinks":{"alternate":[{"title":"xkcd.com","href":"https://xkcd.com","rel":"alternate","type":"text/html"}],"superfeedr":[{"title":"","href":"https://xkcd.com/rss","rel":"superfeedr","type":""}]}}`
+const serializedSource = `{"id":"xkcd-com-2020-1-31-5","title":"xkcd.com","updated":1580446800,"published":1580446800,"permalinkUrl":"https://xkcd.com/","standardLinks":{"alternate":[{"title":"xkcd.com","href":"https://xkcd.com","rel":"alternate","type":"text/html"}],"superfeedr":[{"title":"","href":"https://xkcd.com/rss","rel":"superfeedr","type":""}]}}`
 
 func TestSourceSerialization(t *testing.T) {
 	b, err := json.Marshal(&source)

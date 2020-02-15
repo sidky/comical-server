@@ -14,7 +14,7 @@ func ToStoreEntry(entry *comics.Entry) StoreEntry {
 	return StoreEntry{
 		Permalink:   entry.PermalinkUrl,
 		Title:       entry.Title,
-		Published:   entry.Published.Unix(),
+		Published:   entry.Published.UnixNano(),
 		Description: entry.Description,
 		Images:      entry.Images,
 	}

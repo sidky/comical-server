@@ -46,7 +46,7 @@ func (h XkcdFeedHandler) Convert(item *superfeedr.FeedItem) (*comics.Entry, erro
 		document := goquery.NewDocumentFromNode(node)
 		image := document.Find("img").First()
 
-		if (image != nil) {
+		if image != nil {
 			src, _ := image.Attr("src")
 			alt, _ := image.Attr("alt")
 
@@ -54,7 +54,7 @@ func (h XkcdFeedHandler) Convert(item *superfeedr.FeedItem) (*comics.Entry, erro
 				Origin:       h.Name(),
 				PermalinkUrl: item.PermalinkUrl,
 				Title:        item.Title,
-				Published:    time.Unix(item.Published / 1000, 0),
+				Published:    time.Unix(item.Published / 1000, (item.Published % 1000) * 1000000),
 				Description:  alt,
 				Images:       []string {
 					src,

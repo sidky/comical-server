@@ -12,7 +12,8 @@ func NewComicsEntry(ctx context.Context, item *comics.Entry) error {
 
 	entryName := fmt.Sprintf("comics.%s", item.Origin)
 
-	_, err := GetClient().Collection("comics").Doc(item.Origin).Collection("entries").Doc(item.ID).Set(ctx, store.ToStoreEntry(item))
+	r, err := GetClient().Collection("comics").Doc(item.Origin).Collection("entries").Doc(item.ID).Set(ctx, store.ToStoreEntry(item))
+	log.Printf("Result: %v", r)
 	if err != nil {
 		return err
 	}

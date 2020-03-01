@@ -48,7 +48,7 @@ func (h XkcdFeedHandler) Convert(item *superfeedr.FeedItem) (*comics.Entry, erro
 			alt, _ := image.Attr("alt")
 
 			entry = &comics.Entry{
-				ID:           item.ID,
+				ID:           MD5String(item.ID),
 				Origin:       h.Name(),
 				PermalinkUrl: item.PermalinkUrl,
 				Title:        item.Title,

@@ -29,7 +29,7 @@ var linkset = &Linkset{
 	},
 }
 
-const serializedLinkset = `{"alternate":[{"title":"xkcd.com","href":"https://xkcd.com","rel":"alternate","type":"text/html"},{"title":"xkcd.com","href":"https://m.xkcd.com","rel":"alternate","type":"text/html"}],"superfeedr":[{"title":"","href":"https://xkcd.com/rss.xml","rel":"","type":""}]}`
+const serializedLinkset = `{"alternate":[{"title":"xkcd.com","href":"https://xkcd.com","rel":"alternate","type":"text/html"},{"title":"xkcd.com","href":"https://m.xkcd.com","rel":"alternate","type":"text/html"}],"superfeedr":[{"title":"","href":"https://xkcd.com/rss.xml","rel":"","type":""}],"self":null}`
 
 func TestLinksetSerialization(t *testing.T) {
 	b, err := json.Marshal(linkset)

@@ -55,7 +55,7 @@ func (s SmbcHandler) Convert(item *superfeedr.FeedItem) (*comics.Entry, error) {
 			})
 
 			entry = &comics.Entry{
-				ID:           item.ID,
+				ID:           MD5String(item.ID),
 				Origin:       "smbc",
 				PermalinkUrl: item.PermalinkUrl,
 				Title:        item.Title,

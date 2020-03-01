@@ -31,7 +31,7 @@ var source = Source{
 	},
 }
 
-const serializedSource = `{"id":"xkcd-com-2020-1-31-5","title":"xkcd.com","updated":1580446800,"published":1580446800,"permalinkUrl":"https://xkcd.com/","standardLinks":{"alternate":[{"title":"xkcd.com","href":"https://xkcd.com","rel":"alternate","type":"text/html"}],"superfeedr":[{"title":"","href":"https://xkcd.com/rss","rel":"superfeedr","type":""}]}}`
+const serializedSource = `{"id":"xkcd-com-2020-1-31-5","title":"xkcd.com","updated":1580446800,"published":1580446800,"permalinkUrl":"https://xkcd.com/","standardLinks":{"alternate":[{"title":"xkcd.com","href":"https://xkcd.com","rel":"alternate","type":"text/html"}],"superfeedr":[{"title":"","href":"https://xkcd.com/rss","rel":"superfeedr","type":""}],"self":null}}`
 
 func TestSourceSerialization(t *testing.T) {
 	b, err := json.Marshal(&source)

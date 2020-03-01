@@ -53,7 +53,7 @@ var feedItem = superfeedr.FeedItem{
 func TestXkcdConverter(t *testing.T) {
 	h := XkcdFeedHandler{}
 
-	item, err := h.Convert(feedItem)
+	item, err := h.Convert(&feedItem)
 
 	if err != nil {
 		t.Fail()

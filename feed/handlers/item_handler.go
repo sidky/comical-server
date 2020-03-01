@@ -9,6 +9,7 @@ import (
 // Add all comics handlers here
 var handlers = [...]FeedItemHandler{
 	NewXkcdHandler(), // XKCD
+	NewSmbcHandler(), // Saturday Morning Breakfast Cereal
 }
 
 func ExtractEntry(item *superfeedr.FeedItem) (*comics.Entry, error) {

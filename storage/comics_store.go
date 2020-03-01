@@ -12,7 +12,7 @@ func NewComicsEntry(ctx context.Context, item *comics.Entry) error {
 
 	entryName := fmt.Sprintf("comics.%s", item.Origin)
 
-	_, _, err := GetClient().Collection("comics").Doc(item.Origin).Collection("entries").Add(ctx, store.ToStoreEntry(item))
+	_, err := GetClient().Collection("comics").Doc(item.Origin).Collection("entries").Doc(item.ID).Set(ctx, store.ToStoreEntry(item))
 	if err != nil {
 		return err
 	}
